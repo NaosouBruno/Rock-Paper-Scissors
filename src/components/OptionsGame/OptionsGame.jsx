@@ -12,6 +12,7 @@ export default function OptionsGame(props) {
         iconCard={Scissors}
       />
       <GameCard borderColor="containerIcon--BorderPaper" iconCard={Paper} />
+      <GameCard borderColor="containerIcon--BorderRock" iconCard={Rock} />
     </div>
   );
 }
