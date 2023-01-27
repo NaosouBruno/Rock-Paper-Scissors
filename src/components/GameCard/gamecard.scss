@@ -7,11 +7,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 5%;
-  left: 50%;
+
   position: relative;
 }
 
 .containerIcon--BorderScissor {
   border: 1em solid $scissorsGradient;
+  bottom: 5%;
+  left: 50%;
+}
+.containerIcon--BorderRock {
+  border: 1em solid $rockGradient;
+}
+.containerIcon--BorderPaper {
+  border: 1em solid $paperGradient;
+  bottom: 21%;
+  right: 7%;
 }
