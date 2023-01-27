@@ -1,6 +1,5 @@
 @use "/src/styles/styles" as *;
 .containerIcon {
-  margin: 10px;
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
@@ -8,6 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 5%;
+  left: 50%;
+  position: relative;
 }
 
 .containerIcon--BorderScissor {

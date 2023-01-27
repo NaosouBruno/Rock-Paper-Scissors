@@ -4,10 +4,10 @@ import Scissors from "../../assets/icon-scissors.svg";
 export default function OptionsGame(props) {
   return (
     <div className="backgroundGame">
-      {/*  <GameCard
+      <GameCard
         borderColor="containerIcon--BorderScissor"
         iconCard={Scissors}
-      /> */}
+      />
     </div>
   );
 }
