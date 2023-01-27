@@ -1,9 +1,9 @@
-import GameCard from "./components/GameCard/GameCard";
+import OptionsGame from "./components/OptionsGame/OptionsGame";
 
 function App() {
   return (
-    <div>
-      <GameCard />
+    <div className="main">
+      <OptionsGame />
     </div>
   );
 }

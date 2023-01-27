@@ -4,6 +4,12 @@
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
-  border: 1em solid $scissorsGradient;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerIcon--BorderScissor {
+  border: 1em solid $scissorsGradient;
 }
