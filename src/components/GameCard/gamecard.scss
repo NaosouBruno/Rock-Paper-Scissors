@@ -9,20 +9,19 @@
   align-items: center;
   cursor: pointer;
   position: relative;
-}
-
-.containerIcon--BorderScissor {
-  border: 1em solid $scissorsGradient;
-  bottom: 10%;
-  left: 65%;
-}
-.containerIcon--BorderRock {
-  border: 1em solid $rockGradient;
-  left: 30%;
-  bottom: 10%;
-}
-.containerIcon--BorderPaper {
-  border: 1em solid $paperGradient;
-  bottom: 40%;
-  right: 7%;
+  &--BorderScissor {
+    border: 1em solid $scissorsGradient;
+    bottom: 10%;
+    left: 65%;
+  }
+  &--BorderRock {
+    border: 1em solid $rockGradient;
+    left: 30%;
+    bottom: 10%;
+  }
+  &--BorderPaper {
+    border: 1em solid $paperGradient;
+    bottom: 40%;
+    right: 7%;
+  }
 }
