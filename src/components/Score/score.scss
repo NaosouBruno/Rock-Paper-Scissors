@@ -9,6 +9,26 @@
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  font-family: $family;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #ffff;
   &--describ {
+    display: flex;
+    flex-direction: column;
+    &__spots {
+      align-items: center;
+      background-color: #ffff;
+      border-radius: 5px;
+      width: 30%;
+    }
+  }
+  &--spots {
+    color: $scoreText;
+    font-weight: 500;
+  }
+  &--scoreboard {
+    color: $darkText;
+    font-size: 2em;
   }
 }
