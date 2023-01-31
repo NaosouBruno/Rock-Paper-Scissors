@@ -1,28 +1,28 @@
 @use "/src/styles/styles" as *;
 .containerIcon {
-  width: 9rem;
-  height: 9rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 50%;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  cursor: pointer;
   position: relative;
 }
 
 .containerIcon--BorderScissor {
   border: 1em solid $scissorsGradient;
-  bottom: 5%;
-  left: 50%;
+  bottom: 10%;
+  left: 65%;
 }
 .containerIcon--BorderRock {
   border: 1em solid $rockGradient;
-  left: 20%;
+  left: 30%;
   bottom: 10%;
 }
 .containerIcon--BorderPaper {
   border: 1em solid $paperGradient;
-  bottom: 21%;
+  bottom: 40%;
   right: 7%;
 }
