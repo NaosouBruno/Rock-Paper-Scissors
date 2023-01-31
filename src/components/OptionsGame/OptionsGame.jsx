@@ -4,15 +4,30 @@ import Scissors from "../../assets/icon-scissors.svg";
 import Rock from "../../assets/icon-rock.svg";
 import Paper from "../../assets/icon-paper.svg";
 
-export default function OptionsGame(props) {
+export default function OptionsGame() {
+  const randleChoice = (e) => {
+    console.log(e.target.name);
+  };
   return (
     <div className="backgroundGame">
       <GameCard
         borderColor="containerIcon--BorderScissor"
         iconCard={Scissors}
+        name="Scissors"
+        click={randleChoice}
       />
-      <GameCard borderColor="containerIcon--BorderPaper" iconCard={Paper} />
-      <GameCard borderColor="containerIcon--BorderRock" iconCard={Rock} />
+      <GameCard
+        borderColor="containerIcon--BorderPaper"
+        iconCard={Paper}
+        click={randleChoice}
+        name="Paper"
+      />
+      <GameCard
+        borderColor="containerIcon--BorderRock"
+        iconCard={Rock}
+        click={randleChoice}
+        name="Rock"
+      />
     </div>
   );
 }
