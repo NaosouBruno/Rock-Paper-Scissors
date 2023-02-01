@@ -6,7 +6,8 @@ import Paper from "../../assets/icon-paper.svg";
 
 export default function OptionsGame() {
   const randleChoice = (e) => {
-    console.log(e.target.name);
+    const playerChoice = e.target.name;
+    console.log(playerChoice);
   };
   return (
     <div className="backgroundGame">

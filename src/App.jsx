@@ -1,11 +1,10 @@
-import OptionsGame from "./components/OptionsGame/OptionsGame";
-import Score from "./components/Score/Score";
+import Game from "./components/pages/Game";
+/* import Home from "./components/pages/Home"; */
 
 function App() {
   return (
     <div className="main">
-      <Score />
-      <OptionsGame />
+      <Game />
     </div>
   );
 }
