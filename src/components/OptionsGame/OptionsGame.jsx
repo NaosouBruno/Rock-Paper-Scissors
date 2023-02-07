@@ -3,11 +3,25 @@ import GameCard from "../GameCard/GameCard";
 import Scissors from "../../assets/icon-scissors.svg";
 import Rock from "../../assets/icon-rock.svg";
 import Paper from "../../assets/icon-paper.svg";
+import { useState } from "react";
 
-export default function OptionsGame() {
+/* Passar para o componente APP as seguintes informações: escolha do player e escolha do computador */
+export default function OptionsGame({ gameChoices }) {
+  const options = ["Scissors", "Paper", "Rock"];
+  const [gameOptions, setGameOptions] = useState({
+    player: "",
+    computer: "",
+  });
   const randleChoice = (e) => {
     const playerChoice = e.target.name;
-    console.log(playerChoice);
+    const computerChoice = options[Math.floor(Math.random() * options.length)];
+    setGameOptions({
+      ...gameOptions,
+      ["player"]: playerChoice,
+      ["computer"]: computerChoice,
+    });
+    gameChoices(gameOptions);
+    /*  console.log(gameOptions); */
   };
   return (
     <div className="backgroundGame">

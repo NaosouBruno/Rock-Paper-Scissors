@@ -5,7 +5,7 @@ export default function Game({ playerChoice }) {
   /* receber o conteudo do player */
   return (
     <>
-      <Score />
+      {/*  <Score /> */}
       <div className="game">
         <div className="game--Picked">
           <GameCard />
