@@ -21,7 +21,7 @@ export default function OptionsGame({ gameChoices }) {
       ["computer"]: computerChoice,
     });
     gameChoices(gameOptions);
-    /*  console.log(gameOptions); */
+    /* console.log(gameOptions); */
   };
   return (
     <div className="backgroundGame">
