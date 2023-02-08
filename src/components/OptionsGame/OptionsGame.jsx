@@ -31,7 +31,7 @@ export default function OptionsGame() {
   return (
     <div className="backgroundGame">
       <GameCard
-        borderColor="containerIcon--BorderScissor"
+        borderColor="containerIcon--BorderScissors"
         iconCard={Scissors}
         name="Scissors"
         click={randleChoice}
