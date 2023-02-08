@@ -38,7 +38,7 @@ function App() {
             <div>
               <GameCard
                 borderColor={`containerIcon--Border${gameOptions.computer}`}
-                iconCard={gameOptions.computer}
+                iconCard={`/src/assets/icon-${gameOptions.computer.toLocaleLowerCase()}.svg`}
                 name={gameOptions.computer}
               />
               The House Picked
