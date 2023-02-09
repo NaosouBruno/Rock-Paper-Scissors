@@ -28,7 +28,7 @@ function App() {
           <div className="game">
             <div className="game--Picked">
               <GameCard
-                borderColor={`containerIcon--Border${gameOptions.player}`}
+                borderColor={`containerIcon--Border${gameOptions.player} containerIcon--Border${gameOptions.player}__gameBattle`}
                 iconCard={`/src/assets/icon-${gameOptions.player.toLocaleLowerCase()}.svg`}
                 name={gameOptions.player}
                 /* click={randleChoice} */
@@ -37,7 +37,7 @@ function App() {
             </div>
             <div>
               <GameCard
-                borderColor={`containerIcon--Border${gameOptions.computer}`}
+                borderColor={`containerIcon--Border${gameOptions.computer} containerIcon--Border${gameOptions.computer}__gameBattle`}
                 iconCard={`/src/assets/icon-${gameOptions.computer.toLocaleLowerCase()}.svg`}
                 name={gameOptions.computer}
               />

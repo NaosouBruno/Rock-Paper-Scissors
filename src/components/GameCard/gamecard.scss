@@ -13,15 +13,25 @@
     border: 1em solid $scissorsGradient;
     bottom: 10%;
     left: 65%;
+    &__gameBattle {
+      left: 0;
+    }
   }
   &--BorderRock {
     border: 1em solid $rockGradient;
     left: 30%;
     bottom: 10%;
+    &__gameBattle {
+      left: 0;
+    }
   }
   &--BorderPaper {
     border: 1em solid $paperGradient;
     bottom: 40%;
     right: 7%;
+    &__gameBattle {
+      right: 0;
+      bottom: 10%;
+    }
   }
 }
