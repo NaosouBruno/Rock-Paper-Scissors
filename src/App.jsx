@@ -25,31 +25,38 @@ function App() {
       <GameContext.Provider value={[gameOptions, setGameOptions]}>
         <Score />
         {gameOptions.player.length ? (
-          <div className="game">
-            <div className="game--Picked">
-              <GameCard
-                borderColor={`containerIcon--Border${gameOptions.player} containerIcon--Border${gameOptions.player}__gameBattle`}
-                iconCard={`/src/assets/icon-${gameOptions.player.toLocaleLowerCase()}.svg`}
-                name={gameOptions.player}
-                /* click={randleChoice} */
-              />
-              You Picked
+          <>
+            <div className="game">
+              <div className="game--Typography game--Picked">
+                <GameCard
+                  borderColor={`containerIcon--Border${gameOptions.player} 
+                  containerIcon--Border${gameOptions.player}__gameBattle`}
+                  iconCard={`/src/assets/icon-${gameOptions.player.toLocaleLowerCase()}.svg`}
+                  name={gameOptions.player}
+                  /* click={randleChoice} */
+                />
+                You Picked
+              </div>
+              <div className="game--Typography game--Picked">
+                <GameCard
+                  borderColor={`containerIcon--Border${gameOptions.computer} 
+                  containerIcon--Border${gameOptions.computer}__gameBattle`}
+                  iconCard={`/src/assets/icon-${gameOptions.computer.toLocaleLowerCase()}.svg`}
+                  name={gameOptions.computer}
+                />
+                The House Picked
+              </div>
             </div>
-            <div>
-              <GameCard
-                borderColor={`containerIcon--Border${gameOptions.computer} containerIcon--Border${gameOptions.computer}__gameBattle`}
-                iconCard={`/src/assets/icon-${gameOptions.computer.toLocaleLowerCase()}.svg`}
-                name={gameOptions.computer}
-              />
-              The House Picked
-            </div>
-          </div>
+
+            <button>Again</button>
+          </>
         ) : (
           <>
             <OptionsGame /* gameChoices={handleGameOptions} */ />
           </>
         )}
       </GameContext.Provider>
+      <button className="game--Typography game--Rules">Rules</button>
     </div>
   );
 }
