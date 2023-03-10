@@ -52,6 +52,10 @@
   }
 }
 
+.message-delayed {
+  animation: imgFadeIn 2s ease 2s forwards;
+  opacity: 0;
+}
 .button-delayed {
   animation: fadeIn 2s ease 2s forwards;
   opacity: 0;

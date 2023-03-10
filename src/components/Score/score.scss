@@ -22,10 +22,12 @@
       background-color: #ffff;
       border-radius: 5px;
       width: 30%;
+      height: 110%;
     }
   }
   &--spots {
     color: $scoreText;
+    font-size: 0.8em;
     font-weight: 500;
   }
   &--scoreboard {
