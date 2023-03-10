@@ -18,25 +18,64 @@
   &--Rules {
     width: 35%;
     height: 5%;
+    font-family: $family;
+
     background: transparent;
     border: 2px solid #ffff;
     border-radius: 7px;
     font-size: 1.2em;
     margin-top: 10%;
   }
+  &--message {
+    margin: 65% 0 5% 0;
+    font-size: 2.5em;
+    color: #ffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: $family;
+  }
   &--playAgain {
     width: 60%;
     height: 5%;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     font-size: 1.2em;
     text-transform: uppercase;
     padding: 1%;
     color: hsl(229deg, 25%, 31%);
     font-weight: 600;
-    letter-spacing: 0.1em;
+    font-family: $family;
 
-    margin-top: 70%;
+    letter-spacing: 0.1em;
+  }
+}
+
+.button-delayed {
+  animation: fadeIn 2s ease 2s forwards;
+  opacity: 0;
+}
+.img-delayed {
+  animation: imgFadeIn 2s ease 2s forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  0% {
+    border: none;
+    background-color: black;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes imgFadeIn {
+  0% {
+    border: none;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

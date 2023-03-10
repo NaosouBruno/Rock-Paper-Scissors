@@ -11,7 +11,12 @@ $scoreText: hsl(229, 64%, 46%);
 $headerOutline: hsl(217, 16%, 45%);
 
 /* Color BackGround */
-$radialGradient: hsl(214, 47%, 23%);
+
+$cor-background: linear-gradient(
+  to bottom,
+  hsl(214, 47%, 23%),
+  hsl(237, 49%, 15%)
+);
 
 /* Font */
 $family: "Barlow Semi Condensed" /* [Barlow Semi Condensed] */;

@@ -15,15 +15,18 @@ const initialState = {
 function App() {
   const [gameOptions, setGameOptions] = useState(initialState);
   const [count, setCount] = useState(0);
+  const [playerWin, setPlayerWin] = useState(false);
   const countRef = useRef(0);
 
   useEffect(() => {
+    setPlayerWin(false);
     if (
       gameLogic(gameOptions.player, gameOptions.computer) &&
       countRef.current === 0
     ) {
       setCount((count) => count + 1);
       countRef.current = 1;
+      setPlayerWin(true);
     }
   }, [gameOptions.reset]);
 
@@ -62,8 +65,10 @@ function App() {
                 />
                 You Picked
               </div>
-              <div className="game--Typography game--Picked">
+              <div className="game--Typography game--Picked ">
                 <GameCard
+                  class="button-delayed"
+                  imgClass="img-delayed"
                   borderColor={`containerIcon--Border${gameOptions.computer} 
                   containerIcon--Border${gameOptions.computer}__gameBattle`}
                   iconCard={`/src/assets/icon-${gameOptions.computer.toLocaleLowerCase()}.svg`}
@@ -72,7 +77,11 @@ function App() {
                 The House Picked
               </div>
             </div>
-
+            {playerWin ? (
+              <span className="game--message ">You Win</span>
+            ) : (
+              <span className="game--message ">You Lose</span>
+            )}
             <button className="game--playAgain" onClick={handleReset}>
               Play Again
             </button>
