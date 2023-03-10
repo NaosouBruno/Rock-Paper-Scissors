@@ -6,48 +6,67 @@ import Paper from "../../assets/icon-paper.svg";
 import { useContext, useState } from "react";
 
 import GameContext from "../../contexts/GameContext";
-/* Passar para o componente APP as seguintes informações: escolha do player e escolha do computador */
+import ScoreContext from "../../contexts/ScoreContext";
 export default function OptionsGame() {
   const options = ["Scissors", "Paper", "Rock"];
-  const [gameOptions, setGameOptions] = useState({
-    player: "",
-    computer: "",
-  });
-
   const [choices, setChoices] = useContext(GameContext);
-
-  const randleChoice = (e) => {
+  const [counter, setCounter] = useState(0);
+  const handleChoice = (e) => {
     const playerChoice = e.target.name;
     const computerChoice = options[Math.floor(Math.random() * options.length)];
+
+    if (gameLogic(playerChoice, computerChoice)) {
+      console.log("win");
+      console.log(counter);
+      incrementCounter();
+    }
+
     setChoices({
       ...choices,
-      ["player"]: playerChoice,
-      ["computer"]: computerChoice,
+      player: playerChoice,
+      computer: computerChoice,
+      reset: true,
     });
-    /* console.log(choices); */
-    /*  gameChoices(gameOptions); */
-    /* console.log(gameOptions); */
   };
+  const incrementCounter = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };
+  const gameLogic = (player, computer) => {
+    if (player === computer) {
+      return false;
+    } else if (
+      (player === "Rock" && computer === "Scissors") ||
+      (player === "Scissors" && computer === "Paper") ||
+      (player === "Paper" && computer === "Rock")
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="backgroundGame">
-      <GameCard
-        borderColor="containerIcon--BorderScissors"
-        iconCard={Scissors}
-        name="Scissors"
-        click={randleChoice}
-      />
-      <GameCard
-        borderColor="containerIcon--BorderPaper"
-        iconCard={Paper}
-        click={randleChoice}
-        name="Paper"
-      />
-      <GameCard
-        borderColor="containerIcon--BorderRock"
-        iconCard={Rock}
-        click={randleChoice}
-        name="Rock"
-      />
+      <ScoreContext.Provider value={counter}>
+        <GameCard
+          borderColor="containerIcon--BorderScissors"
+          iconCard={Scissors}
+          name="Scissors"
+          click={handleChoice}
+        />
+        <GameCard
+          borderColor="containerIcon--BorderPaper"
+          iconCard={Paper}
+          click={handleChoice}
+          name="Paper"
+        />
+        <GameCard
+          borderColor="containerIcon--BorderRock"
+          iconCard={Rock}
+          click={handleChoice}
+          name="Rock"
+        />
+      </ScoreContext.Provider>
     </div>
   );
 }

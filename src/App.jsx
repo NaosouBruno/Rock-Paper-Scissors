@@ -1,30 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import OptionsGame from "./components/OptionsGame/OptionsGame";
 import GameCard from "./components/GameCard/GameCard";
-/* import Game from "./components/pages/Game";
-import Home from "./components/pages/Home"; */
-
-import Scissors from "/src/assets/icon-scissors.svg";
 
 import Score from "./components/Score/Score";
 import "./styles/game.scss";
 import GameContext from "./contexts/GameContext";
 
 function App() {
-  const [letsPlay, setLetsPlay] = useState(false);
   const [gameOptions, setGameOptions] = useState({
     player: "",
     computer: "",
+    reset: false,
   });
-  const handleGameOptions = () => {
-    console.log(gameOptions);
-  };
+
+  useEffect(() => {
+    /*  console.log("teste"); */
+  }, [gameOptions.reset]);
 
   return (
     <div className="main">
       <GameContext.Provider value={[gameOptions, setGameOptions]}>
         <Score />
-        {gameOptions.player.length ? (
+        {gameOptions.reset ? (
           <>
             <div className="game">
               <div className="game--Typography game--Picked">
@@ -33,7 +30,6 @@ function App() {
                   containerIcon--Border${gameOptions.player}__gameBattle`}
                   iconCard={`/src/assets/icon-${gameOptions.player.toLocaleLowerCase()}.svg`}
                   name={gameOptions.player}
-                  /* click={randleChoice} */
                 />
                 You Picked
               </div>
@@ -48,11 +44,15 @@ function App() {
               </div>
             </div>
 
-            <button>Again</button>
+            <button
+              onClick={() => setGameOptions({ ...gameOptions, reset: false })}
+            >
+              Again
+            </button>
           </>
         ) : (
           <>
-            <OptionsGame /* gameChoices={handleGameOptions} */ />
+            <OptionsGame />
           </>
         )}
       </GameContext.Provider>
