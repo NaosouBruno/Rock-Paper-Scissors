@@ -73,7 +73,9 @@ function App() {
               </div>
             </div>
 
-            <button onClick={handleReset}>Again</button>
+            <button className="game--playAgain" onClick={handleReset}>
+              Play Again
+            </button>
           </>
         ) : (
           <>
