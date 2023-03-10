@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import OptionsGame from "./components/OptionsGame/OptionsGame";
 import GameCard from "./components/GameCard/GameCard";
 
@@ -6,21 +6,50 @@ import Score from "./components/Score/Score";
 import "./styles/game.scss";
 import GameContext from "./contexts/GameContext";
 
+const initialState = {
+  player: "",
+  computer: "",
+  reset: false,
+};
+
 function App() {
-  const [gameOptions, setGameOptions] = useState({
-    player: "",
-    computer: "",
-    reset: false,
-  });
+  const [gameOptions, setGameOptions] = useState(initialState);
+  const [count, setCount] = useState(0);
+  const countRef = useRef(0);
 
   useEffect(() => {
-    /*  console.log("teste"); */
+    if (
+      gameLogic(gameOptions.player, gameOptions.computer) &&
+      countRef.current === 0
+    ) {
+      setCount((count) => count + 1);
+      countRef.current = 1;
+    }
   }, [gameOptions.reset]);
+
+  const gameLogic = (player, computer) => {
+    if (player === computer) {
+      return false;
+    } else if (
+      (player === "Rock" && computer === "Scissors") ||
+      (player === "Scissors" && computer === "Paper") ||
+      (player === "Paper" && computer === "Rock")
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const handleReset = () => {
+    setGameOptions(initialState);
+    countRef.current = 0;
+  };
 
   return (
     <div className="main">
       <GameContext.Provider value={[gameOptions, setGameOptions]}>
-        <Score />
+        <Score count={count} />
         {gameOptions.reset ? (
           <>
             <div className="game">
@@ -44,11 +73,7 @@ function App() {
               </div>
             </div>
 
-            <button
-              onClick={() => setGameOptions({ ...gameOptions, reset: false })}
-            >
-              Again
-            </button>
+            <button onClick={handleReset}>Again</button>
           </>
         ) : (
           <>

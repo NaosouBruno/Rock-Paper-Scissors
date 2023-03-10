@@ -1,8 +1,6 @@
 import "./score.scss";
 import { useContext } from "react";
-import ScoreContext from "../../contexts/ScoreContext";
-export default function Score() {
-  const counter = useContext(ScoreContext);
+export default function Score(props) {
   return (
     <div className="score">
       <div className="score--describ">
@@ -12,7 +10,7 @@ export default function Score() {
       </div>
       <div className="score--describ score--describ__spots">
         <span className="score--spots">Score</span>
-        <span className="score--scoreboard">{counter}</span>
+        <span className="score--scoreboard">{props.count}</span>
       </div>
     </div>
   );
