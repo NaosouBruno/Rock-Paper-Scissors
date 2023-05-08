@@ -6,6 +6,7 @@ import Score from "./components/Score/Score";
 import "./styles/game.scss";
 import GameContext from "./contexts/GameContext";
 import Rules from "./components/Rules/Rules";
+
 const initialState = {
   player: "",
   computer: "",
